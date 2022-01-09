@@ -10,5 +10,15 @@ namespace LoanManagmentSystem
         {
             Console.WriteLine("Home Running");
         }
+
+        public void activeLoan()
+        {
+
+        }
+
+        public void totalRecive()
+        {
+
+        }
     }
 }
