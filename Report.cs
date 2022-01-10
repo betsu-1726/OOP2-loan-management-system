@@ -8,7 +8,8 @@ namespace LoanManagmentSystem
     {
         public Report()
         {
-
+            //monthly report
+            //annually report
         }
     }
 }

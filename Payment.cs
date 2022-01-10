@@ -10,5 +10,17 @@ namespace LoanManagmentSystem
         {
 
         }
+
+        public void makePayment()
+        {
+
+        }
+
+
+        public void borrowersPaymentList()
+        {
+
+
+        }
     }
 }
