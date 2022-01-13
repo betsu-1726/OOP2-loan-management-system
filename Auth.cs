@@ -16,7 +16,7 @@ namespace LoanManagmentSystem
                 if (File.Exists("./login.txt"))
                 {
                     Console.WriteLine("==============================================");
-                    Console.WriteLine("==================| Admin Login |=============");
+                    Console.WriteLine("=============| Admin Login |==================");
                     Console.WriteLine("==============================================");
                    
                     LoginTrial();
@@ -63,7 +63,7 @@ namespace LoanManagmentSystem
             }
             else
             {
-                Console.WriteLine("Not Logged...Try Another Time");
+               // Console.WriteLine("Not Logged...Try Another Time");
             }
 
         }

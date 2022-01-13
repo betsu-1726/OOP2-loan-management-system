@@ -17,34 +17,47 @@ namespace LoanManagmentSystem
         public Boolean GoOut = false;
         public Customers()
         {
-            MenuPoint:
-            new Menu().customerMenu();
-            Console.Write("Choose Selection:_\b");
-            string menuChoice = Console.ReadLine();
-
-            switch (menuChoice)
+            try
             {
-                case "1":
-                    ViewAllCustomers();
-                    break;
-                case "2":
-                    GoOut = true;
-                    break;
-                default:
-                    break;
+
+                MenuPoint:
+                new Menu().customerMenu();
+                Console.Write("Choose Selection:_\b");
+                string menuChoice = Console.ReadLine();
+
+                switch (menuChoice)
+                {
+                    case "1":
+                        ViewAllCustomers();
+                        break;
+                    case "2":
+                        GoOut = true;
+                        break;
+                    default:
+                        break;
+
+                }
+                Console.WriteLine("Press Enter To Continue...");
+                if (!GoOut)
+                {
+                    goto MenuPoint;
+                }
 
             }
-            if (!GoOut)
+            catch (Exception e)
             {
-                goto MenuPoint;
+                Console.WriteLine("Database Empty.Hit Enter to Continue...");
+                Console.Read();
+                Console.Read();
+
             }
-               
-            
-            
+
+
+
 
         }
 
-        public void AddCustomer(string borrowerFirstName, string borrowerLastName, string borrowerMiddleName, string borrowerSex, string borrowerAddres, string borrowerPhone)
+        public static void AddCustomer(string borrowerFirstName, string borrowerLastName, string borrowerMiddleName, string borrowerSex, string borrowerAddres, string borrowerPhone)
         {
 
             var line = borrowerFirstName + "|" + borrowerLastName + "|" + borrowerMiddleName + "|" + borrowerSex + "|" + borrowerAddres + "|" + borrowerPhone;
@@ -77,6 +90,11 @@ namespace LoanManagmentSystem
                     //Console.Write(letter);
                 }
                 
+            }
+
+            if (File.ReadAllText("./customer.txt").Length == 0)
+            {
+                Console.WriteLine("No Database");
             }
 
             var counter = 0;
